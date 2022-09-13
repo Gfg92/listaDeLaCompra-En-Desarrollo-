@@ -1,4 +1,31 @@
-<app-nav-bar></app-nav-bar>
+<nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="/lista">Lista de la compra</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/editar-articulo">Editar lista</a>
+                </li>
+            </ul>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Buscar artículo" aria-label="Search">
+                <button class="btn btn-primary" type="submit">Buscar</button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+
 <h1 style="text-align: center; color:blue;">{{title}}</h1>
 <h5 style="margin: 10px;">{{subtitle}}</h5>
-<app-lista></app-lista>
+
+<ul>
+    <li *ngFor="let articulo of articulos">{{articulo}}</li>
+</ul>
+
+<form>
+    <input type="text" name="articulo" id="articulo" />
+    <button type="submit" (click)="agregarArticulo()">Agregar</button>
+</form>
