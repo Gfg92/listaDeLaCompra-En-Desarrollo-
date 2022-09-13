@@ -8,12 +8,12 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = '¡Carmen! Aquí tienes tu lista de la compra';
   subtitle = 'Aquí tienes tus artículos:';
-  // articulo:string = "";
-  articulos: string[] = [];
+  articulo: string = "Fruta";
+  articulos: string[] = ["Pan", "Agua", "Tomates"];
 
-  agregarArticulo(articulo: string) {
-    this.articulos.push(articulo);
-    alert("El artículo " + articulo + " se ha añadido a la lista.")
+  agregarArticulo() {
+    alert("El artículo " + this.articulo + " se añadirá a la lista.");
+    this.articulos.push(this.articulo);
   }
 
 
