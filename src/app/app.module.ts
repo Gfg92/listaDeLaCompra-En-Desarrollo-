@@ -6,6 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { NgModel } from '@angular/forms';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { ArticulosComponent } from './articulos/articulos.component';
+import { ArticuloComponent } from './articulo/articulo.component';
 
 
 /*const appRoutes: Routes = [
@@ -18,6 +19,7 @@ import { ArticulosComponent } from './articulos/articulos.component';
     AppComponent,
     NavBarComponent,
     ArticulosComponent,
+    ArticuloComponent,
   ],
   imports: [
     BrowserModule,
