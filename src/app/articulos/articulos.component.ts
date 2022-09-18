@@ -9,7 +9,7 @@ import { Articulo } from '../articulo.model';
 })
 export class ArticulosComponent implements OnInit {
 
-  title = '¡Carmen! Aquí tienes tu lista de la compra';
+  title = '¡Aquí tienes tu lista de la compra!';
   subtitle = 'Aquí tienes tus artículos:';
 
   articulos: Articulo[] = [];
@@ -26,7 +26,7 @@ export class ArticulosComponent implements OnInit {
 
   agregarArticulo() {
     let miArticulo = new Articulo(this.cuadroNombre, this.cuadroCantidad);
-    alert("El artículo " + miArticulo.nombre + " se añadirá a la lista.");
+   // alert("El artículo " + miArticulo.nombre + " se añadirá a la lista.");
     this.articulos.push(miArticulo);
   }
 
