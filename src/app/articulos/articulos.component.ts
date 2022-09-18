@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ValueFromArray } from 'rxjs';
+import { ArticuloService } from '../articulo.service';
 
 @Component({
   selector: 'app-articulos',
@@ -10,19 +12,17 @@ export class ArticulosComponent implements OnInit {
   title = '¡Carmen! Aquí tienes tu lista de la compra';
   subtitle = 'Aquí tienes tus artículos:';
 
-  
-  articulo: string = "Fruta";
-  articulos: string[] = ["Pan", "Agua", "Tomates"];
+  articulos: string[] = ["pan", "agua"];
 
- 
+  constructor() {
 
-  constructor() { }
+  }
 
   ngOnInit(): void {
   }
 
-  agregarArticulo() {
-    alert("El artículo " + this.articulo + " se añadirá a la lista.");
-    this.articulos.push(this.articulo);
+  agregarArticulo(value: any) {
+    alert("El artículo " + value + " se añadirá a la lista.");
+    this.articulos.push(value);
   }
 }

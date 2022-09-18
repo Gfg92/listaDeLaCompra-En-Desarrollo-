@@ -1,4 +1,6 @@
 <h1 style="text-align: center; color:blue;">{{title}}</h1>
+
+
 <h5 style="margin: 10px;">{{subtitle}}</h5>
 
 <ul>
@@ -6,6 +8,6 @@
 </ul>
 
 <form>
-    <input type="text" placeholder="Introduce un artículo" name="articulo" />
-    <button type="text" (click)="agregarArticulo()">Agregar</button>
+    <input type="text" placeholder="Introduce un artículo" #articulo />
+    <button type="text" (click)="agregarArticulo(articulo.value)">Agregar</button>
 </form>
