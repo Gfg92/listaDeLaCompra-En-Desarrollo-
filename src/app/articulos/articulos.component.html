@@ -8,7 +8,14 @@
 <div class="container">
     <div class="row">
         <div class="container">
-            <div *ngFor="let articulo of articulos"> {{articulo.cantidad}} {{articulo.nombre}}</div>
+            <div *ngFor="let articulo of articulos"> {{articulo.cantidad}} {{articulo.nombre}} <div
+                    class="example-button-container">
+                    <button mat-fab color="primary" aria-label="Example icon button with a delete icon">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </div>
+            </div>
+
         </div>
     </div>
 </div>
@@ -29,7 +36,7 @@
             <input type="number" name="cantidad" id="cantidad" placeholder="Cantidad" class="form-control"
                 [(ngModel)]="cuadroCantidad">
         </div>
-        <div class="form-group col-md-1" style="margin-top: 23px;">
+        <div class="form-group col-md-1" style="margin-top: 24px;">
             <button type="submit" class="btn btn-primary" (click)="agregarArticulo()">Agregar</button>
         </div>
     </form>

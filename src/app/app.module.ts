@@ -6,6 +6,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, NgModel } from '@angular/forms';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { ArticulosComponent } from './articulos/articulos.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatIconModule} from '@angular/material/icon';
+
+
 
 
 /*const appRoutes: Routes = [
@@ -19,12 +23,15 @@ import { ArticulosComponent } from './articulos/articulos.component';
     NavBarComponent,
     ArticulosComponent,
     
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     //RouterModule.forRoot(appRoutes)
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
