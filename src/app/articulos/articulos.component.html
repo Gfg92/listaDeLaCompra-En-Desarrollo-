@@ -1,13 +1,35 @@
 <h1 style="text-align: center; color:blue;">{{title}}</h1>
-
-
 <h5 style="margin: 10px;">{{subtitle}}</h5>
 
-<ul>
-    <li *ngFor="let articulo of articulos">{{articulo}}</li>
-</ul>
 
-<form>
-    <input type="text" placeholder="Introduce un artículo" #articulo />
-    <button type="text" (click)="agregarArticulo(articulo.value)">Agregar</button>
+
+        <div class="container">
+            <div *ngFor="let articulo of articulos"> {{articulo.cantidad}} {{articulo.nombre}}</div>
+        </div>
+  
+
+<br />
+<br />
+
+
+<form class="form-group row" style="margin-left: 40px ;">
+    <div class="form-group col-md-1">
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" id="nombre" placeholder="Articulo" class="form-control" [(ngModel)]="cuadroNombre">
+    </div>
+    <div class="form-group col-md-1">
+        <label for="nombre">Cantidad:</label>
+        <input type="number" name="cantidad" id="cantidad" placeholder="Cantidad" class="form-control" [(ngModel)]="cuadroCantidad">
+    </div>
 </form>
+  
+
+<div class="col" style="margin-left: 50px ; margin-top: 20px;">
+    <button type="submit" class="btn btn-primary" (click)="agregarArticulo()">Agrega</button>
+</div>
+
+
+
+
+
+

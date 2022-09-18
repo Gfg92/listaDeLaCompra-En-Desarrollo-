@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
-import { NgModel } from '@angular/forms';
+import { FormsModule, NgModel } from '@angular/forms';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { ArticulosComponent } from './articulos/articulos.component';
 
@@ -18,12 +18,13 @@ import { ArticulosComponent } from './articulos/articulos.component';
     AppComponent,
     NavBarComponent,
     ArticulosComponent,
-
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     //RouterModule.forRoot(appRoutes)
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
