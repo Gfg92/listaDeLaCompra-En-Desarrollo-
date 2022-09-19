@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Articulo } from '../articulo.model';
 
 
@@ -15,6 +15,7 @@ export class ArticulosComponent implements OnInit {
   articulos: Articulo[] = [];
   cuadroNombre: string = "";
   cuadroCantidad: number = 0;
+  
 
   constructor() {
     
@@ -27,11 +28,9 @@ export class ArticulosComponent implements OnInit {
     let miArticulo = new Articulo(this.cuadroNombre, this.cuadroCantidad);
    // alert("El artículo " + miArticulo.nombre + " se añadirá a la lista.");
     this.articulos.push(miArticulo);
-    this.writeArticle();
   }
-
-  writeArticle(){
-    const fs = require("fs");
-    fs.writeFileSync("./resources/articulos.txt", this.articulos);
+  eliminarArticulo(){
+    this.articulos.splice();
   }
+  
 }

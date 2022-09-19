@@ -11,12 +11,10 @@
 <div class="container">
     <div class="row">
         <div class="container">
-            <div *ngFor="let articulo of articulos"> {{articulo.cantidad}} {{articulo.nombre}} <div
-                    class="example-button-container">
-                    <button mat-fab color="primary" aria-label="Example icon button with a delete icon">
+            <div *ngFor="let articulo of articulos; let i = index">{{i+1}} {{articulo.cantidad}} {{articulo.nombre}} 
+                    <button mat-fab color="primary" aria-label="Example icon button with a delete icon" (click)="eliminarArticulo(articulo)">
                         <mat-icon>delete</mat-icon>
                     </button>
-                </div>
             </div>
         </div>
     </div>
