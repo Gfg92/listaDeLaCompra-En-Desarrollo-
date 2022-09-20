@@ -11,13 +11,21 @@
 <div class="container">
     <div class="row">
         <div class="container">
-            <div *ngFor="let articulo of articulos; let indice = index">{{indice + 1}} {{articulo.cantidad}} {{articulo.nombre}} 
-                    <button mat-fab color="primary" aria-label="Example icon button with a delete icon" (click)="eliminarArticulo(indice)">
-                        <mat-icon>delete</mat-icon>
-                    </button>
+            <div *ngFor="let articulo of articulos; let i = index">
+                 {{articulo.cantidad}} {{articulo.nombre}}
+                <button mat-fab class="btn btn-light" style="border-radius: 20%; border-color: black;" type="submit" (click)="eliminarArticulo(i)">
+                    <mat-icon>delete</mat-icon>
+                </button>
             </div>
         </div>
     </div>
+</div>
+
+<br />
+
+<div class="container">
+    <button type="submit" class="btn btn-danger" (click)="eliminarTodos()">Eliminar
+        todo</button>
 </div>
 
 <br />
@@ -35,7 +43,7 @@
             <input type="number" name="cantidad" id="cantidad" placeholder="Cantidad" class="form-control"
                 [(ngModel)]="cuadroCantidad">
         </div>
-        <div class="form-group col-md-1" style="margin-top: 24px;">
+        <div class="form-group col-md-1" style="margin-top: 20px;">
             <button type="submit" class="btn btn-primary" (click)="agregarArticulo()">Agregar</button>
         </div>
     </form>

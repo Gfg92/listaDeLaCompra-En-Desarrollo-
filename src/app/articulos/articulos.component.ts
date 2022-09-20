@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { Articulo } from '../articulo.model';
 
 
@@ -12,17 +12,16 @@ export class ArticulosComponent implements OnInit {
   title = '¡Aquí tienes tu lista de la compra!';
   subtitle = 'Tus artículos:';
 
-  indice: number = 0;
   articulos: Articulo[] = [];
   cuadroNombre: string = "";
   cuadroCantidad: number = 0;
 
-
   constructor() {
-
+    this.articulos;
   }
 
   ngOnInit(): void {
+
   }
 
   agregarArticulo() {
@@ -32,11 +31,15 @@ export class ArticulosComponent implements OnInit {
   }
 
   eliminarArticulo(indice: number) {
-    for (let i = 0; i < this.articulos.length; i++) {
-      if (i == indice) {
-        this.articulos.slice(indice, 0);
-      }
-    }
-    return this.articulos;
+    this.articulos.splice(indice, 1);
   }
+
+  eliminarTodos() {
+    if (confirm("¿Estás segura de que desea eliminar todo?")) {
+      this.articulos.splice(0, this.articulos.length);
+    }
+  }
+
+
+
 }
