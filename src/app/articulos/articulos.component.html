@@ -12,8 +12,9 @@
     <div class="row">
         <div class="container">
             <div *ngFor="let articulo of articulos; let i = index">
-                 {{articulo.cantidad}} {{articulo.nombre}}
-                <button mat-fab class="btn btn-light" style="border-radius: 20%; border-color: black;" type="submit" (click)="eliminarArticulo(i)">
+                {{articulo.cantidad}} {{articulo.nombre}}
+                <button mat-fab class="btn btn-light" style="border-radius: 20%; border-color: black; margin: 5px;"
+                    type="submit" (click)="eliminarArticulo(i)">
                     <mat-icon>delete</mat-icon>
                 </button>
             </div>

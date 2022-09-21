@@ -7,10 +7,12 @@ import { Articulo } from '../articulo.model';
   templateUrl: './articulos.component.html',
   styleUrls: ['./articulos.component.css']
 })
+
 export class ArticulosComponent implements OnInit {
 
   title = '¡Aquí tienes tu lista de la compra!';
   subtitle = 'Tus artículos:';
+  eliminarTodo = '¿Desea eliminar todo?'
 
   articulos: Articulo[] = [];
   cuadroNombre: string = "";
@@ -35,11 +37,9 @@ export class ArticulosComponent implements OnInit {
   }
 
   eliminarTodos() {
-    if (confirm("¿Estás segura de que desea eliminar todo?")) {
+    if (confirm(this.eliminarTodo)) {
       this.articulos.splice(0, this.articulos.length);
     }
   }
-
-
 
 }
