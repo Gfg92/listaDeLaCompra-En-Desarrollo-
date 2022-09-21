@@ -1,7 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { Articulo } from '../articulo.model';
 
-
 @Component({
   selector: 'app-articulos',
   templateUrl: './articulos.component.html',
@@ -35,11 +34,14 @@ export class ArticulosComponent implements OnInit {
   eliminarArticulo(indice: number) {
     this.articulos.splice(indice, 1);
   }
-
+  
   eliminarTodos() {
-    if (confirm(this.eliminarTodo)) {
-      this.articulos.splice(0, this.articulos.length);
+    if (this.articulos.length == 0) {
+      alert("No hay articulos en la cesta");
+    } else {
+      if (confirm(this.eliminarTodo)) {
+        this.articulos.splice(0, this.articulos.length);
+      }
     }
   }
-
 }
