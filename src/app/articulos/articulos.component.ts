@@ -9,9 +9,8 @@ import { Articulo } from '../articulo.model';
 
 export class ArticulosComponent implements OnInit {
 
-  title = '¡Aquí tienes tu lista de la compra!';
-  subtitle = 'Tus artículos:';
-  eliminarTodo = '¿Desea eliminar todo?'
+ 
+  eliminarTodo = '¿Desea eliminar todo?';
 
   articulos: Articulo[] = [];
   cuadroNombre: string = "";
@@ -24,17 +23,17 @@ export class ArticulosComponent implements OnInit {
   ngOnInit(): void {
 
   }
+ 
 
   agregarArticulo() {
-    let miArticulo = new Articulo(this.cuadroNombre, this.cuadroCantidad);
-    // alert("El artículo " + miArticulo.nombre + " se añadirá a la lista.");
-    this.articulos.push(miArticulo);
+      let miArticulo = new Articulo(this.cuadroNombre, this.cuadroCantidad);
+      this.articulos.push(miArticulo);
   }
 
   eliminarArticulo(indice: number) {
     this.articulos.splice(indice, 1);
   }
-  
+
   eliminarTodos() {
     if (this.articulos.length == 0) {
       alert("No hay articulos en la cesta");
