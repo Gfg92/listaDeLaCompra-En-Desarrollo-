@@ -1,5 +1,7 @@
+
 import { Component, Inject, OnInit } from '@angular/core';
 import { Articulo } from '../articulo.model';
+import { ServicioDatosService } from '../servicio-datos.service';
 
 @Component({
   selector: 'app-articulos',
@@ -16,12 +18,12 @@ export class ArticulosComponent implements OnInit {
   cuadroCantidad: number = 0;
 
 
-  constructor() {
-    //  this.articulos;
+  constructor(private miServicio: ServicioDatosService) {
+    // miServicio.leerFichero();
   }
 
   ngOnInit(): void {
-
+    this.miServicio.leerFichero();
   }
 
   agregarArticulo() {
@@ -30,6 +32,8 @@ export class ArticulosComponent implements OnInit {
     } else {
       let miArticulo = new Articulo(this.cuadroNombre, this.cuadroCantidad);
       this.articulos.push(miArticulo);
+      let articuloString = JSON.stringify(miArticulo);
+      this.miServicio.escribirFichero(articuloString);
     }
   }
 

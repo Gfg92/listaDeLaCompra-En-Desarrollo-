@@ -8,6 +8,7 @@ import { ArticulosComponent } from './articulos/articulos.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { TitulosComponent } from './titulos/titulos.component';
+import { ServicioDatosService } from './servicio-datos.service';
 
 
 
@@ -31,7 +32,7 @@ import { TitulosComponent } from './titulos/titulos.component';
     BrowserAnimationsModule,
     MatIconModule
   ],
-  providers: [],
+  providers: [ServicioDatosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
