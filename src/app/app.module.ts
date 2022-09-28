@@ -3,20 +3,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
-import { FormsModule, NgModel } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { ArticulosComponent } from './articulos/articulos.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { TitulosComponent } from './titulos/titulos.component';
-import { ServicioDatosService } from './servicio-datos.service';
+import { ListaArticulosComponent } from './lista-articulos/lista-articulos.component';
 
-
-
-
-/*const appRoutes: Routes = [
-  { path: "lista", component:},
-  { path: "editar-articulo", component:},
-]*/
+const appRoutes: Routes = [
+  { path: "lista", component: ListaArticulosComponent},
+  { path: "editar-articulo", component: ArticulosComponent},
+]
 
 @NgModule({
   declarations: [
@@ -27,12 +23,11 @@ import { ServicioDatosService } from './servicio-datos.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    //RouterModule.forRoot(appRoutes)
     FormsModule,
-    BrowserAnimationsModule,
+    RouterModule.forRoot(appRoutes),
     MatIconModule
   ],
-  providers: [ServicioDatosService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,7 +1,7 @@
 
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Articulo } from '../articulo.model';
-import { ServicioDatosService } from '../servicio-datos.service';
 
 @Component({
   selector: 'app-articulos',
@@ -17,12 +17,12 @@ export class ArticulosComponent implements OnInit {
   cuadroNombre: string = "";
   cuadroCantidad: number = 0;
 
-  constructor(private miServicio: ServicioDatosService) {
-   
+  constructor(private route: Router) {
+
   }
 
   ngOnInit(): void {
-    
+
   }
 
   agregarArticulo() {
@@ -46,6 +46,10 @@ export class ArticulosComponent implements OnInit {
         this.articulos.splice(0, this.articulos.length);
       }
     }
+  }
+
+  volverLista() {
+    this.route.navigate(["/lista"])
   }
 }
 
