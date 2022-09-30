@@ -1,1 +1,24 @@
-<p>lista-articulos works!</p>
+<div class="container">
+    <table mat-table class="mat-elevation-z8" style="width: 100%; text-align: center; background-color: #B8DAFF;">
+        <thead style="background-color: #007BFF; font-family: Arial, Helvetica, sans-serif; color: white;">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Eliminar</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let articulo of articulos; let i = index">
+            <tr>
+                <th scope="row">{{i}}</th>
+                <td>{{articulo.cantidad}}</td>
+                <td>{{articulo.nombre}}</td>
+                <td>
+                    <section class="example-section">
+                        <mat-checkbox class="example-margin">Check me!</mat-checkbox>
+                    </section>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

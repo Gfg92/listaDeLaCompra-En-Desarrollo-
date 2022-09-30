@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
-
 @Component({
   selector: 'app-lista-articulos',
   templateUrl: './lista-articulos.component.html',
@@ -12,5 +10,4 @@ export class ListaArticulosComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }
