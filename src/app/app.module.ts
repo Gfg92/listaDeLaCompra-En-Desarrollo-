@@ -8,6 +8,8 @@ import { ArticulosComponent } from './articulos/articulos.component';
 import { MatIconModule } from '@angular/material/icon';
 import { TitulosComponent } from './titulos/titulos.component';
 import { ListaArticulosComponent } from './lista-articulos/lista-articulos.component';
+import {MatCheckboxModule} from '@angular/material/checkbox'
+import { AlmacenArticulosService } from './almacen-articulos.service';
 
 const appRoutes: Routes = [
   { path: "lista", component: ListaArticulosComponent},
@@ -19,15 +21,17 @@ const appRoutes: Routes = [
     AppComponent,
     ArticulosComponent,
     TitulosComponent,
+    ListaArticulosComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     RouterModule.forRoot(appRoutes),
-    MatIconModule
+    MatIconModule,
+    MatCheckboxModule
   ],
-  providers: [],
+  providers: [AlmacenArticulosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
