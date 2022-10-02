@@ -1,5 +1,5 @@
 
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Articulo } from '../articulo.model';
 
@@ -25,6 +25,7 @@ export class ArticulosComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    localStorage.getItem("articulos");
   }
 
   agregarArticulo() {
@@ -33,7 +34,7 @@ export class ArticulosComponent implements OnInit {
     } else {
       let miArticulo = new Articulo(this.cuadroNombre, this.cuadroCantidad);
       this.articulos.push(miArticulo);
-      this.saveArticle();
+      localStorage.setItem("articulos", JSON.stringify(this.articulos));
     }
   }
 
@@ -47,7 +48,7 @@ export class ArticulosComponent implements OnInit {
     } else {
       if (confirm(this.eliminarTodo)) {
         this.articulos.splice(0, this.articulos.length);
-        this.clearArticulos();
+        localStorage.clear();
       }
     }
   }
@@ -55,19 +56,6 @@ export class ArticulosComponent implements OnInit {
   volverLista() {
     this.route.navigate([""]);
   }
-
-  saveArticle() {
-    localStorage.setItem("articulos", JSON.stringify(this.articulos));
-  }
-
-  retrieve() {
-    return localStorage.getItem("articulos");
-  }
-
-  clearArticulos() {
-    localStorage.clear();
-  }
-
 }
 
 
