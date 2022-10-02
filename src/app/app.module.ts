@@ -9,7 +9,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { TitulosComponent } from './titulos/titulos.component';
 import { ListaArticulosComponent } from './lista-articulos/lista-articulos.component';
 import {MatCheckboxModule} from '@angular/material/checkbox'
-import { AlmacenArticulosService } from './almacen-articulos.service';
 
 const appRoutes: Routes = [
   { path: "lista", component: ListaArticulosComponent},
@@ -31,7 +30,7 @@ const appRoutes: Routes = [
     MatIconModule,
     MatCheckboxModule
   ],
-  providers: [AlmacenArticulosService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
