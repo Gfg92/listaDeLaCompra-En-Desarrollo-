@@ -1,7 +1,6 @@
 
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { stringify } from 'querystring';
 import { Articulo } from '../articulo.model';
 
 @Component({
@@ -66,7 +65,7 @@ export class ArticulosComponent implements OnInit {
   clearArticulos() {
     localStorage.clear();
   }
-  
+
 }
 
 
