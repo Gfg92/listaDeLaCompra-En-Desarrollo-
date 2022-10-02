@@ -13,13 +13,15 @@ export class ArticulosComponent implements OnInit {
 
   eliminarTodo = '¿Desea eliminar todo?';
 
-  articulos: Articulo[] = [];
+  articulos: Articulo[] = [
+    new Articulo("cocacola", 2),
+    new Articulo("fanta", 1),
+    new Articulo("agua", 4)
+  ];
   cuadroNombre: string = "";
   cuadroCantidad: number = 0;
 
-
   constructor(private route: Router) {
-    this.articulos;
   }
 
   ngOnInit(): void {
@@ -51,7 +53,7 @@ export class ArticulosComponent implements OnInit {
   }
 
   volverLista() {
-    this.route.navigate(["/lista"]);
+    this.route.navigate([""]);
   }
 
   saveArticle() {
