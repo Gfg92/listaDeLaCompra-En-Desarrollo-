@@ -14,9 +14,9 @@ export class ArticulosComponent implements OnInit {
   eliminarTodo = '¿Desea eliminar todo?';
 
   articulos: Articulo[] = [
-    new Articulo("cocacola", 2),
-    new Articulo("fanta", 1),
-    new Articulo("agua", 4)
+    // new Articulo("cocacola", 2),
+    // new Articulo("fanta", 1),
+    // new Articulo("agua", 4)
   ];
   cuadroNombre: string = "";
   cuadroCantidad: number = 0;
@@ -25,8 +25,9 @@ export class ArticulosComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    localStorage.getItem("articulos");
+    this.articulos.values();
   }
+
 
   agregarArticulo() {
     if (this.cuadroNombre == "") {
