@@ -26,6 +26,7 @@ export class ArticulosComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.dataService.getArticulos().subscribe();
   }
 
 
