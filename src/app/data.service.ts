@@ -11,7 +11,12 @@ export class DataService {
 
 
   saveArticulos(articulos: Articulo[]) {
-    this.httpService.post('https://mis-articulos-e6b35-default-rtdb.europe-west1.firebasedatabase.app/', articulos).subscribe();
+    this.httpService.put('https://mis-articulos-e6b35-default-rtdb.europe-west1.firebasedatabase.app/', articulos).subscribe();
   }
 
+
+
+
+
+  
 }
