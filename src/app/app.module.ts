@@ -8,6 +8,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { TitulosComponent } from './titulos/titulos.component';
 import { ListaArticulosComponent } from './lista-articulos/lista-articulos.component';
 import {MatCheckboxModule} from '@angular/material/checkbox'
+import { DataService } from './data.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -22,9 +24,10 @@ import {MatCheckboxModule} from '@angular/material/checkbox'
     AppRoutingModule,
     FormsModule,
     MatIconModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

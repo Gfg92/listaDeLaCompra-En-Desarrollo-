@@ -2,6 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Articulo } from '../articulo.model';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-articulos',
@@ -21,11 +22,10 @@ export class ArticulosComponent implements OnInit {
   cuadroNombre: string = "";
   cuadroCantidad: number = 0;
 
-  constructor(private route: Router) {
+  constructor(private route: Router, private dataService: DataService) {
   }
 
   ngOnInit(): void {
-    this.articulos.values();
   }
 
 
@@ -35,7 +35,7 @@ export class ArticulosComponent implements OnInit {
     } else {
       let miArticulo = new Articulo(this.cuadroNombre, this.cuadroCantidad);
       this.articulos.push(miArticulo);
-      localStorage.setItem("articulos", JSON.stringify(this.articulos));
+      this.dataService.saveArticulos(this.articulos);
     }
   }
 
@@ -49,7 +49,6 @@ export class ArticulosComponent implements OnInit {
     } else {
       if (confirm(this.eliminarTodo)) {
         this.articulos.splice(0, this.articulos.length);
-        localStorage.clear();
       }
     }
   }
