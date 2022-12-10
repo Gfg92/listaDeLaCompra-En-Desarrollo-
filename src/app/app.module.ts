@@ -9,6 +9,8 @@ import { TitulosComponent } from './titulos/titulos.component';
 import { ListaArticulosComponent } from './lista-articulos/lista-articulos.component';
 import {MatCheckboxModule} from '@angular/material/checkbox'
 import { HttpClientModule } from '@angular/common/http';
+import { DataServices } from './data.services';
+
 
 
 @NgModule({
@@ -26,7 +28,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatCheckboxModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [DataServices],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
